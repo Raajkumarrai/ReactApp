@@ -11,8 +11,10 @@ function App() {
   const toggleStyle = () => {
     if (mode === "light") {
       setMode("dark");
+      document.body.style.backgroundColor = "grey";
     } else {
       setMode("light");
+      document.body.style.backgroundColor = "white";
     }
   };
   return (
@@ -21,7 +23,7 @@ function App() {
       <div className="container my-5">
         <TextForm heading="This is heading of text field" mode={mode} />
       </div>
-      <About />
+      <About mode={mode} toggleStyle={toggleStyle} />
     </>
   );
 }

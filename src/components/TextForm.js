@@ -32,11 +32,20 @@ const TextForm = (props) => {
     setText(event.target.value);
   };
   return (
-    <div className="container">
+    <div
+      className="container"
+      style={{
+        color: props.mode === "dark" ? "white" : "black",
+      }}
+    >
       <h1>{props.heading}</h1>
       <div className="my-3">
         <textarea
           className="form-control my-3"
+          style={{
+            backgroundColor: props.mode === "dark" ? "grey" : "white",
+            color: props.mode === "dark" ? "white" : "black",
+          }}
           value={text}
           onChange={handleOnChange}
           rows="4"
@@ -62,7 +71,9 @@ const TextForm = (props) => {
         </p>
         <p>{0.008 * text.split(" ").length} Minutes read</p>
         <h2>Preview</h2>
-        <p>{text}</p>
+        <p>
+          {text.length > 0 ? text : "Enter above something to preview here..."}
+        </p>
       </div>
     </div>
   );

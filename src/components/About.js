@@ -1,11 +1,26 @@
-import React, { useState } from "react";
-
-const About = () => {
+const About = (props) => {
   return (
-    <div className="container">
-      <h1 className="my-3">About Us</h1>
+    <div
+      className="container"
+      style={{
+        color: props.mode === "dark" ? "white" : "black",
+        backgroundColor: props.mode === "dark" ? "grey" : "white",
+      }}
+    >
+      <h1
+        className="my-3"
+        style={{ color: props.mode === "dark" ? "white" : "black" }}
+      >
+        About Us
+      </h1>
       <div className="accordion" id="accordionExample">
-        <div className="accordion-item">
+        <div
+          className="accordion-item"
+          style={{
+            color: props.mode === "dark" ? "white" : "black",
+            backgroundColor: props.mode === "dark" ? "grey" : "white",
+          }}
+        >
           <h2 className="accordion-header">
             <button
               className="accordion-button"
@@ -14,6 +29,10 @@ const About = () => {
               data-bs-target="#collapseOne"
               aria-expanded="true"
               aria-controls="collapseOne"
+              style={{
+                color: props.mode === "dark" ? "white" : "black",
+                backgroundColor: props.mode === "dark" ? "grey" : "white",
+              }}
             >
               Accordion Item #1
             </button>
@@ -22,6 +41,10 @@ const About = () => {
             id="collapseOne"
             className="accordion-collapse collapse show"
             data-bs-parent="#accordionExample"
+            style={{
+              color: props.mode === "dark" ? "white" : "black",
+              backgroundColor: props.mode === "dark" ? "grey" : "white",
+            }}
           >
             <div className="accordion-body">
               <strong>This is the first item's accordion body.</strong> It is
@@ -30,12 +53,18 @@ const About = () => {
               the overall appearance, as well as the showing and hiding via CSS
               transitions. You can modify any of this with custom CSS or
               overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              about any HTML can go within the though the transition does limit
+              overflow.
             </div>
           </div>
         </div>
-        <div className="accordion-item">
+        <div
+          className="accordion-item"
+          style={{
+            color: props.mode === "dark" ? "white" : "black",
+            backgroundColor: props.mode === "dark" ? "grey" : "white",
+          }}
+        >
           <h2 className="accordion-header">
             <button
               className="accordion-button collapsed"
@@ -44,6 +73,10 @@ const About = () => {
               data-bs-target="#collapseTwo"
               aria-expanded="false"
               aria-controls="collapseTwo"
+              style={{
+                color: props.mode === "dark" ? "white" : "black",
+                backgroundColor: props.mode === "dark" ? "grey" : "white",
+              }}
             >
               Accordion Item #2
             </button>
@@ -60,8 +93,8 @@ const About = () => {
               the overall appearance, as well as the showing and hiding via CSS
               transitions. You can modify any of this with custom CSS or
               overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              about any HTML can go within the though the transition does limit
+              overflow.
             </div>
           </div>
         </div>
@@ -74,6 +107,10 @@ const About = () => {
               data-bs-target="#collapseThree"
               aria-expanded="false"
               aria-controls="collapseThree"
+              style={{
+                color: props.mode === "dark" ? "white" : "black",
+                backgroundColor: props.mode === "dark" ? "grey" : "white",
+              }}
             >
               Accordion Item #3
             </button>
@@ -82,6 +119,10 @@ const About = () => {
             id="collapseThree"
             class="accordion-collapse collapse"
             data-bs-parent="#accordionExample"
+            style={{
+              color: props.mode === "dark" ? "white" : "black",
+              backgroundColor: props.mode === "dark" ? "grey" : "white",
+            }}
           >
             <div class="accordion-body">
               <strong>This is the third item's accordion body.</strong> It is
@@ -90,8 +131,8 @@ const About = () => {
               the overall appearance, as well as the showing and hiding via CSS
               transitions. You can modify any of this with custom CSS or
               overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              about any HTML can go within the though the transition does limit
+              overflow.
             </div>
           </div>
         </div>
