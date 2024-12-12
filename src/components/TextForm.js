@@ -5,16 +5,19 @@ const TextForm = (props) => {
   const handleUpClick = () => {
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Text changed to Uppercase", "success");
   };
 
   const handleLowClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Text changed to Lowercase", "success");
   };
 
   const handleClear = () => {
     let newText = "";
     setText(newText);
+    props.showAlert("Text has been cleared", "success");
   };
 
   const handleEmailClick = () => {
@@ -23,8 +26,10 @@ const TextForm = (props) => {
     const emails = text.match(emailRegex);
     if (emails) {
       setText("Extracted Emails: \n" + emails.join(", "));
+      props.showAlert("Email has been extracted", "success");
     } else {
       setText("No emails found in the text.");
+      props.showAlert("No emails found in the text", "warning");
     }
   };
 
