@@ -1,6 +1,7 @@
 import "./App.css";
 import About from "./components/About";
 import Alert from "./components/Alert";
+import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import React, { useState } from "react";
@@ -52,6 +53,11 @@ function App() {
               exact
               path="/about"
               element={<About mode={mode} toggleStyle={toggleStyle} />}
+            />
+            <Route
+              exact
+              path="/contact"
+              element={<Contact mode={mode} toggleStyle={toggleStyle} />}
             />
           </Routes>
         </div>

@@ -37,6 +37,15 @@ export default function Navbar(props) {
                 About
               </Link>
             </li>
+            <li className="nav-item">
+              <Link
+                className="nav-link"
+                style={{ color: props.mode === "dark" ? "white" : "black" }}
+                to="/Contact"
+              >
+                Contact Us
+              </Link>
+            </li>
           </ul>
 
           <div
