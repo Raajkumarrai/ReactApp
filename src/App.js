@@ -2,6 +2,7 @@ import "./App.css";
 import About from "./components/About";
 import Alert from "./components/Alert";
 import Contact from "./components/Contact";
+import Country from "./components/Country";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import React, { useState } from "react";
@@ -47,6 +48,10 @@ function App() {
                   showAlert={showAlert}
                 />
               }
+            />
+            <Route
+              path="/country"
+              element={<Country mode={mode} toggleStyle={toggleStyle} />}
             />
             <Route
               path="/about"

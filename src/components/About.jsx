@@ -3,14 +3,10 @@ const About = (props) => {
     color: props.mode === "dark" ? "white" : "black",
     backgroundColor: props.mode === "dark" ? "grey" : "white",
   };
-  const headStyle = {
-    color: props.mode === "dark" ? "white" : "black",
-  };
+
   return (
-    <div className="container" style={{}}>
-      <h1 className="my-3" style={headStyle}>
-        About Us
-      </h1>
+    <div className="container" style={myStyle}>
+      <h1 className="my-3">About Us</h1>
       <div className="accordion" id="accordionExample">
         <div className="accordion-item" style={myStyle}>
           <h2 className="accordion-header">
@@ -30,7 +26,6 @@ const About = (props) => {
             id="collapseOne"
             className="accordion-collapse collapse show"
             data-bs-parent="#accordionExample"
-            style={myStyle}
           >
             <div className="accordion-body">
               <strong>This is the first item's accordion body.</strong> It is

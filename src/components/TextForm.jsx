@@ -48,7 +48,7 @@ const TextForm = (props) => {
         <textarea
           className="form-control my-3"
           style={{
-            backgroundColor: props.mode === "dark" ? "grey" : "white",
+            backgroundColor: props.mode === "dark" ? "#595c5df5" : "white",
             color: props.mode === "dark" ? "white" : "black",
           }}
           value={text}

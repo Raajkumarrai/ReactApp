@@ -1,27 +1,28 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-export default function Navbar(props) {
+export default function Navbar({ title = "Set Title", mode, toggleStyle }) {
   return (
     <nav
-      className={`navbar navbar${props.mode} navbar-expand-lg bg-${props.mode}`}
+      className={`navbar navbar-${mode} navbar-expand-lg bg-${mode} `}
+      style={{ position: "sticky", top: 0, zIndex: 10000 }}
     >
       <div className="container-fluid">
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li>
+            <li className="nav-item">
               <Link
                 className="navbar-brand"
-                style={{ color: props.mode === "dark" ? "white" : "black" }}
+                style={{ color: mode === "dark" ? "white" : "black" }}
                 to="/"
               >
-                {props.title}
+                {title}
               </Link>
             </li>
             <li className="nav-item">
               <Link
-                className="nav-link active "
-                style={{ color: props.mode === "dark" ? "white" : "black" }}
+                className="nav-link active"
+                style={{ color: mode === "dark" ? "white" : "black" }}
                 aria-current="page"
                 to="/"
               >
@@ -31,7 +32,16 @@ export default function Navbar(props) {
             <li className="nav-item">
               <Link
                 className="nav-link"
-                style={{ color: props.mode === "dark" ? "white" : "black" }}
+                style={{ color: mode === "dark" ? "white" : "black" }}
+                to="/Country"
+              >
+                Country
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                className="nav-link"
+                style={{ color: mode === "dark" ? "white" : "black" }}
                 to="/About"
               >
                 About
@@ -40,7 +50,7 @@ export default function Navbar(props) {
             <li className="nav-item">
               <Link
                 className="nav-link"
-                style={{ color: props.mode === "dark" ? "white" : "black" }}
+                style={{ color: mode === "dark" ? "white" : "black" }}
                 to="/Contact"
               >
                 Contact Us
@@ -50,7 +60,7 @@ export default function Navbar(props) {
 
           <div
             className={`form-check form-switch text-${
-              props.mode === "light" ? "dark" : "light"
+              mode === "light" ? "dark" : "light"
             }`}
           >
             <input
@@ -58,9 +68,12 @@ export default function Navbar(props) {
               type="checkbox"
               role="switch"
               id="flexSwitchCheckDefault"
-              onClick={props.toggleStyle}
+              onClick={toggleStyle}
             />
-            <label className="form-check-label" for="flexSwitchCheckDefault">
+            <label
+              className="form-check-label"
+              htmlFor="flexSwitchCheckDefault"
+            >
               Enable
             </label>
           </div>
@@ -72,7 +85,6 @@ export default function Navbar(props) {
 
 Navbar.propTypes = {
   title: PropTypes.string.isRequired,
-};
-Navbar.defaultProps = {
-  title: "Set Title",
+  mode: PropTypes.string.isRequired,
+  toggleStyle: PropTypes.func.isRequired,
 };
