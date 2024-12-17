@@ -16,8 +16,8 @@ const TextForm = (props) => {
 
   const handleClear = () => {
     let newText = "";
-    setText(newText);
     props.showAlert("Text has been cleared", "success");
+    setText(newText);
   };
 
   const handleEmailClick = () => {
@@ -71,8 +71,13 @@ const TextForm = (props) => {
       <div>
         <h2>Word counter</h2>
         <p>
-          The total word is {text.split(" ").length - 1} and total letters are{" "}
-          {text.length}
+          The total word is{" "}
+          {
+            text.split(/\s+/).filter((element) => {
+              return element.length !== 0;
+            }).length
+          }{" "}
+          and total letters are {text.length}
         </p>
         <p>{0.008 * text.split(" ").length} Minutes read</p>
         <h2>Preview</h2>

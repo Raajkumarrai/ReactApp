@@ -11,11 +11,45 @@ const Contact = (props) => {
     >
       <div>
         <h3>This is contact us page</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-          earum quia, sed harum ipsum, fuga beatae odio nostrum, iste in totam.
-          Incidunt quasi omnis quas dolorem velit accusamus at aliquam!
-        </p>
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">
+              Email address
+            </label>
+            <input
+              type="email"
+              className="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
+            <div id="emailHelp" className="form-text">
+              We'll never share your email with anyone else.
+            </div>
+          </div>
+          <div className="mb-3">
+            <div className="form-floating">
+              <textarea
+                className="form-control rows='5' "
+                placeholder="Leave a comment here"
+                id="floatingTextarea"
+              ></textarea>
+              <label for="floatingTextarea">Comments</label>
+            </div>
+          </div>
+          <div className="mb-3 form-check">
+            <input
+              type="checkbox"
+              className="form-check-input"
+              id="exampleCheck1"
+            />
+            <label className="form-check-label" for="exampleCheck1">
+              Check me out
+            </label>
+          </div>
+          <button type="submit" className="btn btn-primary">
+            Submit
+          </button>
+        </form>
       </div>
     </div>
   );

@@ -34,7 +34,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar title="React App" mode={mode} toggleStyle={toggleStyle} />
+        <Navbar title="Text Changer" mode={mode} toggleStyle={toggleStyle} />
         <Alert alert={alert} />
         <div className="container my-5">
           <Routes>
