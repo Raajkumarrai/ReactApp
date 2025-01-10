@@ -33,6 +33,7 @@ const Country = (props) => {
           flag: country.flags.svg,
         }));
         setCountries(formattedData);
+        console.log(data);
       } catch (error) {
         console.error("Error fetching countries:", error);
       }

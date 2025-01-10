@@ -49,6 +49,7 @@ function App() {
                 />
               }
             />
+
             <Route
               path="/country"
               element={<Country mode={mode} toggleStyle={toggleStyle} />}
